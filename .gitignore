@@ -1,0 +1,15 @@
+# IDE
+.idea
+.DS_STORE
+
+# dependencies
+node_modules
+
+# production
+# assets
+
+# misc
+*.log
+*.swp
+npm-debug.log
+!logs
