@@ -3,8 +3,8 @@ import {
     Route,
     Link
 } from 'react-router-dom';
-import Count from './count/count';
-
+import Count from './count/count.jsx';
+console.log(Count);
 const Home = () => (
     <div>Home</div>
 );
@@ -67,9 +67,10 @@ const App = () => (
         <Route path="/" exact component={Home} />
         <Route path="/" component={HomeList} />
         <Route path="/" component={HomeItem} />
+        <Route path="/" component={Count} />
         <Route path="/about" component={About} />
-        <Route path="/count" component={Count} />
         <Route path="/topics" component={Topics} />
+        <Route path="/count" component={Count} />
         <Route path="*" component={NotFound} />
     </div>
 );

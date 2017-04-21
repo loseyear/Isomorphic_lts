@@ -1,7 +1,7 @@
 import {
     INCREASE,
     DECREASE
-} from './constants';
+} from './constant';
 
 export default function count(number = 0, action) {
     if (action.type === INCREASE) {

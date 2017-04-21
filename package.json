@@ -4,7 +4,17 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node bin/entry.js",
+    "start:supervisor": "supervisor bin/entry.js",
+    "start:pm2": "pm2 start bin/entry.js --name=mobile",
+    "stop:pm2": "pm2 stop mobile",
+    "reload:pm2": "pm2 reload mobile",
+    "build": "webpack --config build/webpack.config.js",
+    "build:watch": "cd build && webpack -w",
+    "build:react": "cd build && webpack --config react.config.js",
+    "wds": "cd build && webpack-dev-server --devtool eval --progress --colors --port 9527 --inline --hot --config wds.config.js --content-base ./../",
+    "mock": "karma start ",
+    "mocha": "mocha --compilers js:babel-core/register mock/**/*.spec.js"
   },
   "repository": {
     "type": "git",

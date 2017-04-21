@@ -4,11 +4,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-        app: path.resolve(__dirname, './client/client.jsx')
+        app: path.resolve(__dirname, '../client/client.jsx')
     },
     output: {
-        publicPath: './assets/scripts/',
-        path: path.resolve(__dirname, './assets/scripts'),
+        publicPath: '../scripts/',
+        path: path.resolve(__dirname, '../assets/scripts'),
         filename: '[name].js',
         chunkFilename: '[name]_[chunkhash:5].js'
     },
@@ -17,10 +17,10 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 include: [
-                    path.resolve(__dirname, 'client')
+                    path.resolve(__dirname, '../client')
                 ],
                 exclude: [
-                    path.resolve(__dirname, 'node_modules')
+                    path.resolve(__dirname, '../node_modules')
                 ],
                 loader: 'babel-loader',
                 options: {

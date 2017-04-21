@@ -11,7 +11,7 @@ const port = 9527;
 
 app.context.logger = logger;
 
-app.use(serve(path.resolve(__dirname, '/../assets')));
+app.use(serve(path.resolve(__dirname, './../assets/')));
 
 app.use(async (ctx, next) => render(ctx, next));
 
