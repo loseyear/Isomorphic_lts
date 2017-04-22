@@ -5,6 +5,7 @@ const vendors = [
     'react',
     'react-dom',
     'react-router',
+    'react-router-dom',
     'react-redux',
     'redux',
     'redux-thunk',
@@ -39,4 +40,3 @@ module.exports = {
         })
     ]
 };
-

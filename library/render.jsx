@@ -2,10 +2,12 @@ import React from 'react';
 import { StaticRouter as Router, matchPath } from 'react-router';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import serialize from 'serialize-javascript';
 
-import configureStore from './../client/store';
-import App from './../client/app.jsx';
+import rootReducer from './../client/reducers';
+import App from './../client/app';
 
 // render first screen
 const temp = (content, initialState) => (
@@ -52,7 +54,7 @@ const routes = [
     '/topics',
     '/count',
     '/topics/*',
-    '/scripts',
+    '/async',
 ];
 
 export default async (ctx, next) => {
@@ -66,10 +68,14 @@ export default async (ctx, next) => {
         ctx.body = notFound(404);
         return;
     }
-    const store = configureStore();
+    const middleware = [thunk];
+    const store = createStore(
+        rootReducer,
+        applyMiddleware(...middleware)
+    ) || null;
     const context = {};
     const content = renderToString(
-        <Provider store={configureStore()}>
+        <Provider store={store}>
             <Router
                 location={ctx.url}
                 context={context}

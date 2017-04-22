@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 
-import count from './count/reducer';
+import count from './components/count/reducer';
+import async from './components/async/reducer';
 
 const rootReducer = combineReducers({
-    count
+    count,
+    async,
 });
 
 export default rootReducer;

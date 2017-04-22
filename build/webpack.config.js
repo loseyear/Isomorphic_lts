@@ -44,7 +44,16 @@ module.exports = {
     },
     devtool: 'sorece-map',
     plugins: [
-        new ExtractTextPlugin('../styles/app.css'),
+        new ExtractTextPlugin({ filename: '../styles/[name].css', disable: false, allChunks: true }),
+        new webpack.DllReferencePlugin({
+            context: __dirname,
+            manifest: require('./reactFest.json')
+        }),
+        new webpack.DefinePlugin({
+            'process.env':{
+               NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
+            }
+        }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false

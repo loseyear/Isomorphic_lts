@@ -3,11 +3,9 @@ import { connect } from 'react-redux';
 
 import { increase, decrease } from './action';
 
-import s from './count';
-
 function Count({ count, increase, decrease }) {
     return (
-        <div className={s.box}>
+        <div>
             <h2>Some state changes:</h2>
             <div>{count}</div>
             <button onClick={() => increase(1)}>Increase</button>
@@ -22,3 +20,4 @@ export default connect(
     }),
     { increase, decrease }
 )(Count);
+

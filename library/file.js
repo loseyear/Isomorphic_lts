@@ -14,6 +14,7 @@ file.read = async (ctx, next, opt, cb) => {
                         }
                     );
                 } else {
+                    cb(e, 'failure')
                     ctx.logger.error(e);
                 }
             }

@@ -1,18 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
     Route,
     Link
 } from 'react-router-dom';
-import Count from './count/count';
+
+import Count from './components/count';
+import Async from './components/async';
 
 const Home = () => (
     <div>Home</div>
-);
-const HomeList = () => (
-    <div>HomeList</div>
-);
-const HomeItem = () => (
-    <div>HomeItem</div>
 );
 const About = () => (
     <div>About</div>
@@ -61,16 +57,15 @@ const App = () => (
         <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
-            <li><Link to="/topics">Topics</Link></li>
             <li><Link to="/count">Count</Link></li>
+            <li><Link to="/async">Async</Link></li>
+            <li><Link to="/topics">Topics</Link></li>
         </ul>
         <Route path="/" exact component={Home} />
-        <Route path="/" component={HomeList} />
-        <Route path="/" component={HomeItem} />
         <Route path="/about" component={About} />
         <Route path="/count" component={Count} />
+        <Route path="/async" component={Async} />
         <Route path="/topics" component={Topics} />
-        <Route path="*" component={NotFound} />
     </div>
 );
 export default App;

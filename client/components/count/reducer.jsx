@@ -11,3 +11,4 @@ export default function count(number = 0, action) {
     }
     return number;
 }
+
