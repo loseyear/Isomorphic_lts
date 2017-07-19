@@ -1,0 +1,27 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules",
+    "client"
+  ],
+  "verbose": true,
+  "execMap": {
+    "js": "node --harmony"
+  },
+  "events": {
+  },
+  "watch": [
+    "bin",
+    "server",
+    "library",
+    "assets"
+  ],
+  "env": {
+    "NODE_ENV": "development",
+    "PORT": "9527"
+  },
+  "ext": "js jsx json css",
+  "legacy-watch": false
+}
+
