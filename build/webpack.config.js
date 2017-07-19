@@ -21,6 +21,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         use: ['react-hot-loader/webpack', 'babel-loader'],
+        exclude: /node_modules/,
       },
       {
         test: /\.s[ac]ss$/,
@@ -37,7 +38,6 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.scss', 'jpg', 'jpeg', 'png', 'gif', 'svg']
   },
-  devtool: 'source-map',
   plugins: [
     new ExtractTextPlugin({ filename: '../styles/[name].css', disable: false, allChunks: true }),
     new webpack.DllReferencePlugin({
@@ -48,15 +48,6 @@ module.exports = {
       'process.env':{
         NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
       }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),

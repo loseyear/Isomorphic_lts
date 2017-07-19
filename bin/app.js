@@ -20,8 +20,12 @@ app.use(serve(path.resolve(__dirname, './../assets/')));
 app.use(webpackMiddleware({
   config: config,
   dev: {
+    hot: true,
     noInfo: false,
     publicPath: config.output.publicPath,
+    stats: {
+      colors: true,
+    },
   }
 }));
 
