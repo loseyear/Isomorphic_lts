@@ -8,7 +8,7 @@ import Count from './components/count';
 import Async from './components/async';
 
 const Home = () => (
-    <div>Home</div>
+    <div>Home home 3</div>
 );
 const About = () => (
     <div>About</div>
@@ -68,4 +68,6 @@ const App = () => (
         <Route path="/topics" component={Topics} />
     </div>
 );
+
 export default App;
+

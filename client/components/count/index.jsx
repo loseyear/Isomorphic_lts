@@ -6,7 +6,7 @@ import { increase, decrease } from './action';
 function Count({ count, increase, decrease }) {
     return (
         <div>
-            <h2>Some state changes:</h2>
+            <h2>Some state changes 2:</h2>
             <div>{count}</div>
             <button onClick={() => increase(1)}>Increase</button>
             <button onClick={() => decrease(1)}>Decrease</button>
