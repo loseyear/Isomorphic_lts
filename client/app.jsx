@@ -8,7 +8,7 @@ import Count from './components/count';
 import Async from './components/async';
 
 const Home = () => (
-    <div>Home home 1</div>
+    <div>Home home 3</div>
 );
 const About = () => (
     <div>About</div>

@@ -8,7 +8,7 @@ import routes from './../server/routes';
 import render from './../library/render';
 import logger from './../library/logger';
 
-import config from './../build/webpack.config';
+import config from './../build/dev.config';
 
 const app = new Koa();
 const port = 9527;

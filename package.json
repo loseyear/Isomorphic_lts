@@ -4,9 +4,10 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "NODE_ENV=development nodemon bin/entry.js",
-    "build": "webpack --config build/webpack.config.js",
-    "build:react": "cd build && webpack --config react.config.js",
+    "start": "cross-env NODE_ENV=development nodemon bin/entry.js",
+    "build": "",
+    "build:react": "webpack --config build/react.config.js",
+    "build:pro": "webpack --config build/pro.config.js",
     "mock": "karma start ",
     "mocha": "mocha --compilers js:babel-core/register mock/**/*.spec.js"
   },
@@ -52,6 +53,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.24.1",
+    "cross-env": "^5.0.1",
     "css-loader": "^0.28.0",
     "css-modules-require-hook": "^4.0.6",
     "eslint-plugin-react": "^7.1.0",
