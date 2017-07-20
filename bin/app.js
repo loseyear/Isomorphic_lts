@@ -11,23 +11,24 @@ import logger from './../library/logger';
 import config from './../build/dev.config';
 
 const app = new Koa();
-const port = 9527;
+const port = process.env.PORT || 9527;
 
 app.context.logger = logger;
 
-app.use(serve(path.resolve(__dirname, './../assets/')));
-
-app.use(webpackMiddleware({
-  config: config,
-  dev: {
-    hot: true,
-    noInfo: false,
-    publicPath: config.output.publicPath,
-    stats: {
-      colors: true,
-    },
-  }
-}));
+if (process.env.NODE_ENV) {
+  app.use(serve(path.resolve(__dirname, './../assets/')));
+  app.use(webpackMiddleware({
+    config: config,
+    dev: {
+      hot: true,
+      noInfo: false,
+      publicPath: config.output.publicPath,
+      stats: {
+        colors: true,
+      },
+    }
+  }));
+}
 
 app.use(async (ctx, next) => {
   if (ctx.path.match(/^\/api/)) {
@@ -40,7 +41,9 @@ app.on('error', (err, ctx) => {
     ctx.logger.error('server error', err);
 });
 
-onerror(app);
+if (process.env.NODE_ENV) {
+  onerror(app);
+}
 
 app.listen(port, () => {
     console.warn('Server run on: http://0.0.0.0:%d', port);

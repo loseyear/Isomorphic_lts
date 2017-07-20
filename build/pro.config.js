@@ -34,6 +34,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.scss', 'jpg', 'jpeg', 'png', 'gif', 'svg']
   },
+  devtool: 'hidden-source-map',
   plugins: [
     new ExtractTextPlugin({ filename: '../styles/[name].css', disable: false, allChunks: true }),
     new webpack.DllReferencePlugin({
@@ -47,5 +48,11 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      compress: {
+        warnings: false,
+      }
+    }),
   ]
 };
