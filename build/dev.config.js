@@ -11,10 +11,8 @@ module.exports = {
     ]
   },
   output: {
-    publicPath: '/scripts/',
-    path: path.resolve(__dirname, '../assets/scripts'),
-    filename: '[name].js',
-    chunkFilename: '[name]_[chunkhash:5].js'
+    publicPath: '/',
+    filename: 'scripts/[name].js',
   },
   module: {
     rules: [
@@ -30,6 +28,13 @@ module.exports = {
         })
       },
       {
+        test: /\.(less|css)$/,
+        use: ExtractTextPlugin.extract({
+          use: ['css-loader', 'less-loader'],
+          fallback: 'style-loader',
+        }),
+      },
+      {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loader: 'file-loader?name=../images/[hash:8].[name].[ext]'
       }
@@ -39,7 +44,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.scss', 'jpg', 'jpeg', 'png', 'gif', 'svg']
   },
   plugins: [
-    new ExtractTextPlugin({ filename: '../styles/[name].css', disable: false, allChunks: true }),
+    new ExtractTextPlugin({ filename: 'styles/[name].css', disable: false, allChunks: true }),
     new webpack.DllReferencePlugin({
       context: __dirname,
       manifest: require('./reactFest.json')

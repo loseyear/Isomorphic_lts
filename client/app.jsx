@@ -6,6 +6,7 @@ import {
 
 import Count from './components/count';
 import Async from './components/async';
+import Ant from './components/antd';
 
 const Home = () => (
     <div>Home home 4</div>
@@ -57,12 +58,14 @@ const App = () => (
         <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
+            <li><Link to="/ant">ant</Link></li>
             <li><Link to="/count">Count</Link></li>
             <li><Link to="/async">Async</Link></li>
             <li><Link to="/topics">Topics</Link></li>
         </ul>
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About} />
+        <Route path="/ant" component={Ant} />
         <Route path="/count" component={Count} />
         <Route path="/async" component={Async} />
         <Route path="/topics" component={Topics} />

@@ -26,6 +26,13 @@ module.exports = {
         })
       },
       {
+        test: /\.(less|css)$/,
+        use: ExtractTextPlugin.extract({
+          use: ['css-loader', 'less-loader'],
+          fallback: 'style-loader',
+        }),
+      },
+      {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loader: 'file-loader?name=../images/[hash:8].[name].[ext]'
       }

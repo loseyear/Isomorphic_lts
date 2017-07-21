@@ -10,4 +10,11 @@ require('css-modules-require-hook')({
     camelCase: true,
     generateScopedName: '[name]_[local]_[hash:base64:5]'
 });
+require('css-modules-require-hook')({
+  extensions: ['.less'],
+  processorOpts: {
+    parser: require('postcss-less').parse,
+  },
+  generateScopedName: '[name]_[local]_[hash:base64:5]',
+});
 require('./app.js');

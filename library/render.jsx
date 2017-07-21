@@ -49,8 +49,10 @@ const notFound = status => (
 );
 // 声明路由
 const routes = [
+    '*',
     '/',
     '/about',
+    '/ant',
     '/topics',
     '/count',
     '/topics/*',
