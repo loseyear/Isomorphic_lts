@@ -4,7 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "clean": "rimraf ./assets",
+    "clean": "rimraf ./assets/library/react* ./assets/scripts ./assets/styles ./assets/images",
     "start": "npm run watch && cross-env NODE_ENV=development nodemon bin/entry.js",
     "watch": "npm-run-all clean build:react",
     "build": "npm-run-all clean build:react build:pro",
