@@ -16,6 +16,7 @@ const store = createStore(
   applyMiddleware(...middleware)
 ) || null;
 
+
 const hotRender = (Component) => {
   render(
     <AppContainer>
@@ -36,4 +37,3 @@ if (module.hot) {
     hotRender(require('./app'));
   });
 }
-

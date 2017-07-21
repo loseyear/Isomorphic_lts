@@ -6,6 +6,7 @@
   "scripts": {
     "clean": "rimraf ./assets/library/react* ./assets/scripts ./assets/styles ./assets/images",
     "start": "npm run watch && cross-env NODE_ENV=development nodemon bin/entry.js",
+    "start:pro": "cross-env NODE_ENV=production nodemon bin/entry.js",
     "watch": "npm-run-all clean build:react",
     "build": "npm-run-all clean build:react build:pro",
     "build:react": "webpack --config build/react.config.js",

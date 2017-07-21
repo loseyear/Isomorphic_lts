@@ -7,7 +7,6 @@ module.exports = {
     app: path.resolve(__dirname, '../client/client.jsx'),
   },
   output: {
-    publicPath: '/scripts/',
     path: path.resolve(__dirname, '../assets/scripts'),
     filename: '[name].js',
     chunkFilename: '[name]_[chunkhash:5].js'
@@ -50,7 +49,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env':{
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
+        NODE_ENV: JSON.stringify('production')
       }
     }),
     new webpack.HotModuleReplacementPlugin(),
