@@ -1,2 +1,3 @@
 - [ ] pro.config.js for webpack
 - [ ] production App
+- [ ] code split
