@@ -14,9 +14,9 @@ const app = new Koa();
 const port = process.env.PORT || 9527;
 
 app.context.logger = logger;
+app.use(serve(path.resolve(__dirname, './../assets/')));
 
-if (process.env.NODE_ENV) {
-  app.use(serve(path.resolve(__dirname, './../assets/')));
+if (process.env.NODE_ENV === 'development') {
   app.use(webpackMiddleware({
     config: config,
     dev: {
@@ -41,7 +41,7 @@ app.on('error', (err, ctx) => {
     ctx.logger.error('server error', err);
 });
 
-if (process.env.NODE_ENV) {
+if (process.env.NODE_ENV === 'development') {
   onerror(app);
 }
 
