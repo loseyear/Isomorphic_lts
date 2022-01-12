@@ -1,17 +1,11 @@
 {
-  "name": "Isomorphic_lts",
+  "name": "isomorphic",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "clean": "rimraf ./assets/library/react* ./assets/scripts ./assets/styles ./assets/images",
-    "start": "npm run watch && cross-env NODE_ENV=development nodemon bin/entry.js",
-    "watch": "npm-run-all clean build:react",
-    "build": "npm-run-all clean build:react build:pro",
-    "build:react": "webpack --config build/react.config.js",
-    "build:pro": "webpack --config build/pro.config.js",
-    "mock": "karma start ",
-    "mocha": "mocha --compilers js:babel-core/register mock/**/*.spec.js"
+    "start": "webpack serve --hot -c ./scripts/webpack.dev.js",
+    "build": "webpack -c ./scripts/webpack.pro.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +18,22 @@
     "url": "https://github.com/loseyear/Isomorphic_lts/issues"
   },
   "homepage": "https://github.com/loseyear/Isomorphic_lts#readme",
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2"
+  },
+  "devDependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "core-js": "^3.20.2",
+    "fork-ts-checker-webpack-plugin": "^6.5.0",
+    "html-webpack-plugin": "^5.5.0",
+    "path": "^0.12.7",
+    "swc-loader": "^0.1.15",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.3"
+  }
 }

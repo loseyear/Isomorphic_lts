@@ -6,10 +6,12 @@
 node_modules
 
 # production
-# assets
+assets
+dist
 
 # misc
 *.log
 *.swp
 npm-debug.log
 !logs
+package-lock.json
