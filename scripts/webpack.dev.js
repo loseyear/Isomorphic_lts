@@ -26,6 +26,7 @@ module.exports = {
     },
     webSocketServer: 'ws',
   },
+  devtool: "source-map",
   module: {
     rules: [
       {
@@ -40,18 +41,36 @@ module.exports = {
                 parser: {
                   syntax: 'typescript',
                   tsx: true,
+                  decorators: true,
                   dynamicImport: true,
+                  sourceMaps: true,
+                  inlineSourcesContent: true,
                 },
+                loose: true,
+                target: 'es2015',
+                externalHelpers: true,
                 transform: {
+                  legacyDecorator: true,
+                  decoratorMetadata: true,
                   react: {
                     // swc-loader will check whether webpack mode is 'development'
                     // and set this automatically starting from 0.1.13. You could also set it yourself.
                     // swc won't enable fast refresh when development is false
                     runtime: 'automatic',
                     refresh: true,
+                    development: true,
+                    useBuiltins: true,
+                    throwIfNamespace: true,
                   },
                 },
               },
+              module: {
+                type: "es6",
+                strict: true,
+                strictMode: true,
+                lazy: true,
+                noInterop: false,
+              }
             },
           },
         ],

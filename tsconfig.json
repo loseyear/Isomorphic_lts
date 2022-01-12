@@ -2,14 +2,20 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "ESNext",
+    // "module": "ESNext",
+    "module": "none",
     "moduleResolution": "node",
     "outDir": "dist",
     "target": "ESNext",
-    "sourceMap": true
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "types": [
+      "react/next",
+      "react-dom/next",
+    ],
   },
   "include": [
     "scripts",
     "client",
-  ]
+  ],
 }

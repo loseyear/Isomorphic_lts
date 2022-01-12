@@ -1,0 +1,11 @@
+{
+  "watch": [
+    "client",
+    "library",
+    "scripts",
+    "bin"
+  ],
+  "ext": "ts,json",
+  "ignore": ["src/**/*.spec.ts"],
+  "exec": "ts-node ./bin/index.ts"
+}
