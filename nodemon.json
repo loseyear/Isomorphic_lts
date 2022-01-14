@@ -5,7 +5,7 @@
     "scripts",
     "bin"
   ],
-  "ext": "ts,json",
+  "ext": "ts,tsx,json",
   "ignore": ["src/**/*.spec.ts"],
   "exec": "ts-node ./bin/index.ts"
 }

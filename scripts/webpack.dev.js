@@ -11,7 +11,7 @@ const {
 module.exports = {
   mode: 'development',
   entry: {
-    app: path.resolve(__dirname, '../client/index.tsx'),
+    app: path.resolve(__dirname, '../client/client.tsx'),
   },
   devServer: {
     port,
