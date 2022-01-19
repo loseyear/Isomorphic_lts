@@ -1,4 +1,4 @@
-const IMAGE_LIST = 'IMAGE_LIST' // 提示框
+const IMAGE_LIST = 'IMAGE_LIST'
 
 const set = res => ({
   type: IMAGE_LIST,

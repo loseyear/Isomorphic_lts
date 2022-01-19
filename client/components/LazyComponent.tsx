@@ -4,6 +4,7 @@ function LazyComponent() {
   const [c, sc] = useState(0)
   return (
     <>
+      aaabcdef
       <h1 onClick={() => sc(c + 1)}>Lazy Component! {c}</h1>
     </>
   );

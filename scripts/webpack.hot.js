@@ -1,5 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
 const ReactRefreshPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -12,9 +11,7 @@ const {
 module.exports = {
   mode: 'development',
   entry: {
-    // app: path.resolve(__dirname, '../client/client.tsx'),
-    // hot server
-    app: ['webpack-hot-middleware/client', path.resolve(__dirname, '../client/client.tsx')],
+    app: path.resolve(__dirname, '../client/client.tsx'),
   },
   output: {
     publicPath: '/',
@@ -85,8 +82,6 @@ module.exports = {
   },
   plugins: [
     new ReactRefreshPlugin(),
-    // hot server
-    new webpack.HotModuleReplacementPlugin(),
     new ForkTsCheckerWebpackPlugin(),
     new HtmlWebpackPlugin({
       inject: false,

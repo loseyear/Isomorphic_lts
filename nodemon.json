@@ -1,6 +1,5 @@
 {
   "watch": [
-    "client",
     "library",
     "scripts",
     "bin"

@@ -11,3 +11,7 @@ export const Boxa = styled.div`
 export const Boxb = styled.div`
   color: blue;
 `
+
+export const Boxc = styled.div`
+  color: blue;
+`
